@@ -1,0 +1,14 @@
+*******************************************************
+*PEGAR UM HTML DE UMA PÁGINA E PROCURAR ALGUMA PALAVRA*
+*******************************************************
+      	$html= file_get_contents('<URL DA PAGINA>');
+        $q = "/(?<!\\w)(<PALAVRA>\\w*)/i";
+        preg_match_all($q,$html,$matches);
+
+
+***************************************************
+*FAZER UM DOWNLOAD DE UMA URL, E SALVAR NA STORAGE*
+***************************************************
+	$filename = 'arquivo.zip';
+	$file = file_get_contents('<URL DO DOWNLOAD>');
+        file_put_contents(storage_path($filename), $file);

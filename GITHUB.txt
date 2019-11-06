@@ -1,0 +1,16 @@
+***************************************
+*RETIRANDO TODOS OS ARQUIVOS DE STAGED*
+***************************************
+git checkout -- .
+
+************************************
+*RETIRANDO TODAS AS UNTRACKED FILES*
+************************************
+/*mostra todos os arquivos que serão removidos
+git clean -n 
+/*remove todos os arquivos
+git clean -f
+
+
+
+

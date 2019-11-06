@@ -1,0 +1,15 @@
+*********************************
+* 	    TESTANDO		*
+*********************************
+
+* * * * root echo arquivo >> teste.txt 
+
+********************************************
+*MANDA O STATUS DO ULTIMO COMANDO EXECUTADO*
+********************************************
+echo $? >> __ARQUIVO 
+
+************************************
+*MOSTRA O PATH DO COMANDO EXECUTADO*
+************************************
+which <comando> >> __Arquivo
