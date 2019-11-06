@@ -1,0 +1,3 @@
+Se precisar reverter uma migration específica, crie uma pasta temporária e jogue as migratios que deseja atualizar la, primeiro reverta(reset) e depois rode novamente como no ex abaixo:
+php artisan migrate --path=/database/temp/<MigrationName>
+php artisan migrate:reset --path=/database/temp/<MigrationName>
