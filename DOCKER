@@ -1,0 +1,5 @@
+*********************************
+* RESTART DOCKER SERVICE WINDOWS*
+*********************************
+net stop com.docker.service
+net start com.docker.service
