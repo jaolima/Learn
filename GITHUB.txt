@@ -11,6 +11,10 @@ git clean -n
 /*remove todos os arquivos
 git clean -f
 
+*********************************************
+* RESETANDO O CÓDIGO PARA UM COMMIT ANTERIOR*
+*********************************************
+git reset HEAD~1
 
 
 
