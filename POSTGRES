@@ -1,0 +1,9 @@
+**********************************
+* FAZENDO UM BACKUP DE UM SCHEMA *
+**********************************
+pg_dump --host localhost --port 5432 --username "postgres" --format custom --verbose --file "backup_tabela.backup" --table nome_do_schema.* nome_do_banco 
+
+**********************************
+*     RESTAURANDO O BANCO        *
+**********************************
+ pg_restore -d nome_do_banco -h localhost -U postgres < backup_tabela.backup
