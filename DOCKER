@@ -3,3 +3,21 @@
 *********************************
 net stop com.docker.service
 net start com.docker.service
+
+****************
+*DOCKER COMPOSE*
+****************
+#iniciando
+docker-compose up
+
+#listando
+docker composer ps
+
+#dirrubando 
+docker-compose down
+
+#entrando em um docker setando o usuario e mandando um comando
+docker-compose exec db psql -U postgres -c '\l'
+
+#logs
+docker-compose logs -f -t 
