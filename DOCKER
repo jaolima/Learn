@@ -1,3 +1,18 @@
+********************
+* COMANDOS BÁSICOS *
+********************
+#ver todas as imagens
+docker images
+
+#listar containers em execução 
+docker ps 
+
+#listar todos os containers
+docker ps -a
+
+#logs
+docker logs <id|name>
+
 *********************************
 * RESTART DOCKER SERVICE WINDOWS*
 *********************************
@@ -21,3 +36,19 @@ docker-compose exec db psql -U postgres -c '\l'
 
 #logs
 docker-compose logs -f -t 
+
+**************
+* DOCKERFILE *
+**************
+#subindo um projeto a partir de um dockerfile em uma porta específica
+docker run --name docker-jenkins -p 8080:8080 <usuario-docker-hub>/missao-devops-jenkins:0.1.0
+
+
+*************
+* DOCKERHUB *
+*************
+#login
+docker login <usuario-docker-hub>
+
+#push
+docker push <usuario-docker-hub>/<nome do container>:0.1.0
