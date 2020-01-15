@@ -1,0 +1,32 @@
+***********
+* INSTALL *
+***********
+npm install -g surge
+
+*********
+* LOGIN *
+*********
+surge login 
+email: *************
+senha: *************
+
+*********
+* BUILD *
+*********
+surge 
+
+**************
+* SURGE LIST *
+**************
+surge list 
+
+******************
+* SUBINDO UM SITE*
+******************
+surge --project projeto/raizdoprojeto/ --domain umDominio.surge.sh 
+
+******************
+* DIRRUBAR O SITE*
+******************
+surge teardown
+
