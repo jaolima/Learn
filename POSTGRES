@@ -21,3 +21,9 @@ fi
 pg_dump --host localhost --port 54000 --username postgres --format plain -a --verbose --file $i-$table.sql --table sigeo2.$table db_dev_cotec;
 index=$(expr $index + 1)
 done
+
+*************************************************************
+* COPIANDO ARQUIVOS DA MAQUINA HOST PARA DENTRO DO CONTAINER*
+*************************************************************
+docker cp arquivo nome_do_container:/home/caminho/pasta
+
