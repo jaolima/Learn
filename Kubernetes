@@ -1,3 +1,73 @@
+***************
+* GET STARTED *
+***************
+//entre em modo root
+sudo su 
+
+// desligue a memoria swap
+swapoff -a 
+
+// edite as configrações do swap
+vi /etc/fstab
+
+// comente essa linha
+# swap was on /dev/sda3 during installation
+# UUID=9f163eae-1ec4-4ea7-bbbe-2911e8ccd62f none
+
+//configure o iptable
+vi /etc/ufw/sysctl.conf
+
+//adicione essas linhas no final do arquivo
+net/bridge/bridge-nf-call-ip6tables = 1
+net/bridge/bridge-nf-call-iptables = 1
+net/bridge/bridge-nf-call-arptables = 1
+
+//reinicialize 
+
+//instale as dependências 
+sudo su
+apt-get install ebtables ethtool
+
+***********************
+*INSTALANDO O KUBEADM *
+***********************
+//instalando o suporte para https 
+apt-get update && apt-get install -y apt-transport-https
+
+//pegando a chave do reposiorio 
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+
+//Add kubernetes repo to manifest:
+cat <<EOF >/etc/apt/sources.list.d/kubernetes.list
+deb http://apt.kubernetes.io/ kubernetes-xenial main
+EOF
+
+//instalando o kubeadm 
+apt-get update && apt-get install -y kubelet kubeadm kubectl 
+
+*********************
+* CRIANDO UM CLUSTER*
+*********************
+//iniciando com o kubeadm 
+kubeadm init --pod-network-cidr=192.168.0.0/16
+
+//caso tenha dado certo irá aparecer uma tela com informações contendo essa mensagem
+Your Kubernetes control-plane has initialized successfully!
+
+
+vendo os nos 
+kubectl get node
+
+iniciando um pod 
+kubectl run <nomeDoPod> --image=k8s.gcr.io/echoserver:1.4 --port=8080
+
+deletando um pod
+kubectl delete pod <nomeDoPod>
+
+obtendo informações sobre o cluster
+kubectl cluster-info
+
+
 remove 
 sudo apt-get purge kubeadm kubectl kubelet kubernetes-cni kube* 
 sudo apt-get autoremove
