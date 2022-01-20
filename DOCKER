@@ -34,6 +34,12 @@ docker-compose down
 #entrando em um docker setando o usuario e mandando um comando
 docker-compose exec db psql -U postgres -c '\l'
 
+**********
+exclui todos os containers inativos
+********
+docker rm $(docker ps -q -a)
+
+
 #logs
 docker-compose logs -f -t 
 
